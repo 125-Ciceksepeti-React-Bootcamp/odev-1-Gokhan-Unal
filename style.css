@@ -131,11 +131,23 @@ body {
   flex-direction: column;
 }
 
+.card__context > * {
+  margin: 10px;
+}
+
 .card__image {
   width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+.card__button {
+  text-decoration: none;
+  color: black;
+  background: #ccc;
+  text-align: center;
+  padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
   .main {
     display: flex;
     flex-direction: column;
