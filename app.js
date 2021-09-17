@@ -1,4 +1,7 @@
-const cards = document.querySelector(".card-wrapper")
+const cards = document.querySelector('.card-wrapper')
+const cardButton = document.querySelector('.card__btn')
+const form = document.querySelector('.form')
+const formButton = document.querySelector('.form__btn')
 
 async function createCard() {
   const data = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
@@ -17,9 +20,19 @@ async function createCard() {
                </div>
           </div>
         </div>
-       `;
-    cards.innerHTML += html;
+       `
+    cards.innerHTML += html
   }
 }
 
 createCard()
+
+cardButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  form.classList.toggle('hide')
+})
+
+formButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  cards.classList.toggle('hide')
+})

@@ -154,6 +154,10 @@ body {
   padding: 5px;
 }
 
+.hide {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .main {
     display: flex;
