@@ -36,3 +36,9 @@ formButton.addEventListener('click', (e) => {
   e.preventDefault()
   cards.classList.toggle('hide')
 })
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const data = Array.from(e.target.elements)
+  data.forEach((d) => console.log(d.value))
+})
