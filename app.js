@@ -2,6 +2,7 @@ const cards = document.querySelector('.card-wrapper')
 const cardButton = document.querySelector('.card__btn')
 const form = document.querySelector('.form')
 const formButton = document.querySelector('.form__btn')
+const modal = document.querySelector('.modal')
 
 async function createCard() {
   const data = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
@@ -41,4 +42,19 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   const data = Array.from(e.target.elements)
   data.forEach((d) => console.log(d.value))
+  const modalElement = document.createElement('div')
+  modalElement.classList.add('modal')
+  const arr = []
+  data.forEach((d) => {
+    arr.push(d.value)
+  })
+  console.log(arr)
+  modalElement.innerText = arr.join('\n')
+  document.body.appendChild(modalElement)
+})
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelector('.modal').style.display = 'none'
+  }
 })
